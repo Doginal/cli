@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: crawler
-  namespace: scrapy
+  namespace: scrapy-rc
   labels:
     app: crawler
 spec:
@@ -19,11 +19,14 @@ spec:
       containers:
       - name: crawler
         image: istresearch/scrapy-cluster:crawler-1.2
+        # envFrom:
+        # - configMapRef:
+            # name: 'scrapy-rc-configmap'
         env:
         # CRAWLER SETTINGS: http://scrapy-cluster.readthedocs.io/en/latest/topics/crawler/settings.html
         # CRAWLER: REDIS
         - name: REDIS_HOST
-          value: "redis.scrapy"
+          value: "redis.scrapy-rc"
         - name: REDIS_PORT
           value: "6379"
         - name: REDIS_DB

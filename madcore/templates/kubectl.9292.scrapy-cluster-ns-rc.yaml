@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: scrapy
+  name: scrapy-rc
   labels:
-    name: scrapy
+    name: scrapy-rc

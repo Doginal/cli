@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rest-rc
-  namespace: scrapy
+  namespace: scrapy-rc
   labels:
     app: rest-rc
 spec:
@@ -99,7 +99,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: rest-rc
-  namespace: scrapy
+  namespace: scrapy-rc
   labels:
     app: rest-rc
 spec:
