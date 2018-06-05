@@ -145,10 +145,6 @@ def main(args=None):
         el = elements.Elements(sett)
         el.kubectl_install_elements("scrapy")
 
-    elif args.install_scrapy_rc:
-        el = elements.Elements(sett)
-        el.kubectl_install_elements("scrapy-rc")
-
     elif args.install_tron:
         el = elements.Elements(sett)
         el.kubectl_install_elements("tron")
