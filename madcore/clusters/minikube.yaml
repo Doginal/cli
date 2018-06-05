@@ -109,5 +109,25 @@ elements:
         - name: scrapy-cluster-kafka-monitor
           template: kubectl.9289.scrapy-cluster-kafka-monitor.yaml
 
+    scrapy-rc:
+        - name: scrapy-rc-configmap
+          template: kubectl.9400.scrapy-cluster-configmap-rc.yaml
+        - name: scrapy-cluster-ns-rc
+          template: kubectl.9401.scrapy-cluster-ns-rc.yaml
+        - name: scrapy-cluster-redis
+          template: kubectl.9402.scrapy-cluster-redis-rc.yaml
+        # - name: scrapy-cluster-zookeeper
+        #   template: kubectl.9403.scrapy-cluster-zookeeper-rc.yaml
+        # - name: scrapy-cluster-kafka
+        #   template: kubectl.9404.scrapy-cluster-kafka-rc.yaml
+        - name: scrapy-cluster-kafka-monitor
+          template: kubectl.9405.scrapy-cluster-kafka-monitor-rc.yaml
+        - name: scrapy-cluster-rest-rc
+          template: kubectl.9406.scrapy-cluster-rest-rc.yaml
+        - name: scrapy-cluster-crawler-rc
+          template: kubectl.9407.scrapy-cluster-crawler-rc.yaml
+        - name: scrapy-cluster-redis-monitor
+          template: kubectl.9408.scrapy-cluster-redis-monitor-rc.yaml
+
 
 

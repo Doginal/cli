@@ -25,7 +25,7 @@ data:
 
     KAFKA_BROKER_ID=${HOSTNAME##*-}
     cp -Lur /etc/kafka-configmap/* /etc/kafka/
-    sed -i "s/#init#broker.id=#init#/broker.id=$KAFKA_BROKER_ID/" /etc/kafka/server.properties
+    # sed -i "s/#init#broker.id=#init#/broker.id=$KAFKA_BROKER_ID/" /etc/kafka/server.properties
 
     LABELS="kafka-broker-id=$KAFKA_BROKER_ID"
     ANNOTATIONS=""
@@ -309,7 +309,7 @@ spec:
     matchLabels:
       app: kafka
   serviceName: "broker"
-  replicas: 1
+  replicas: 3
   updateStrategy:
     type: OnDelete
   template:
@@ -371,7 +371,7 @@ spec:
         - name: config
           mountPath: /etc/kafka
         - name: data
-          mountPath: /var/lib/kafka/data
+          mountPath: /var/lib/kafka-broker-$KAFKA_BROKER_ID/data
       volumes:
       - name: configmap
         configMap:
