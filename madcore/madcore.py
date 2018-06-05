@@ -89,9 +89,6 @@ def main(args=None):
                        help='install apache flink', action='store_true')
     group.add_argument('--install-scrapy',
                        help='install scrapy cluster', action='store_true')
-
-    group.add_argument('--install-scrapy-rc',
-                       help='install scrapy cluster', action='store_true')
     group.add_argument(
         '--install-tron', help='install tron network', action='store_true')
     args = parser.parse_args()
